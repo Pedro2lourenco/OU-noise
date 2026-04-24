@@ -55,6 +55,15 @@ O script é dividido nas seguintes etapas principais:
 5. **Visualização**: Utiliza a biblioteca Matplotlib para traçar um gráfico comparativo, exibindo os dados originais (em preto) e o cenário projetado a partir do último ponto (em vermelho).
 
 ---
+## Resultado
+
+O código gera previsões diferentes sobre a série temporal anterior. A quantidade de passos desejados previstos no futuro pode ter sua predição precisa ou não.
+
+<p align="center">
+  <img src="Predict_time_series.png" width="500">
+</p>
+
+---
 
 ## Requisitos e Execução
 

@@ -1,6 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+plt.rcParams.update({
+    "font.family": "serif",
+    "font.size": 14,
+    "axes.linewidth": 1.5,
+    "xtick.direction": "in",
+    "ytick.direction": "in",
+    "xtick.top": True,
+    "ytick.right": True,
+    "xtick.major.size": 6,
+    "ytick.major.size": 6,
+    "legend.frameon": False
+})
+
 def ou_forecast(x0,mu,theta,sigma,N):
     pred = []
     x = x0
@@ -14,7 +27,7 @@ def ou_forecast(x0,mu,theta,sigma,N):
     return np.array(pred)
 
 
-data = np.loadtxt(r'data.dat')
+data = np.loadtxt('data.dat')
 
 x = data[:,1]
 
@@ -32,12 +45,15 @@ mu = b/theta
 
 x0 = x[-1]
 
-pred = ou_forecast(x0,mu,theta,sigma,len(x))
+pred = ou_forecast(x0,mu,theta,sigma,len(x)//5)
 
 plt.plot(np.arange(len(x)), x, color='k', label='Original Data')
-plt.plot(np.arange(len(x), len(x)+len(pred)), pred,color='r', label='Predict')
+plt.plot(np.arange(len(x), len(x)+len(pred)), pred,color='r',linestyle='--', label='Predict')
 
 plt.xlabel('t')
-plt.ylabel(r'$\phi$')
+plt.ylabel('values')
 plt.legend()
+
+plt.savefig('Predict_time_series.png',dpi=300)
 plt.show()
+
