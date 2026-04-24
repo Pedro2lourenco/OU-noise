@@ -68,9 +68,10 @@ O código gera previsões diferentes sobre a série temporal anterior. A quantid
 ## Requisitos e Execução
 
 Para executar este script, as seguintes bibliotecas Python são necessárias:
-python```
-`numpy`
-`matplotlib`
+
+```bash
+numpy
+matplotlib
 ```
 
 ---
